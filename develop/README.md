@@ -1,4 +1,7 @@
-# README generator
+# **README Generator** [![License](https://img.shields.io/badge/License-Boost%201.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)
+
+  ## Table of Contents
+
   * [description](#description)
 
   * [installation](#installation)
@@ -13,27 +16,28 @@
 
   * [questions](#questions)
 
-  * [description](#description)
 
-  ## description
-  This project takes in user input to generate a styled readme.
+
+  # Description
+  This project uses node.js to create a professional README.md
   
-  ## installation
-  Download the file along with dependencies. 
+  # Installation
+  Install the required node packages. 
 
-  ## usage
-  The project is used by creators to quickly and effectively generate readme files
+  # Usage
+  This project is used to generate a README.md file from user input in the command line. 
 
-  ## license
-  Boost Software
+  # License
+  This project is licensed under Boost Software
 
-  ## contributors
-  ColtonBloomquist
+  # Contributors
+  Colton Bloomquist
 
-  ## tests
+  # Tests
   No
 
-  ## questions
-  Email me at Coltonbloomquist@yahoo.com
+  # Questions
+  If you have questions, please reach out to me at coltonbloomquist@yahoo.com or visit my github at github.com/coltonbloomquist
+  
   
   

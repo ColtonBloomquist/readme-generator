@@ -3,7 +3,7 @@ const fs = require("fs");
 const inquirer = require("inquirer");
 const Choices = require("inquirer/lib/objects/choices");
 const { resourceUsage } = require("process");
-const generateMarkdown = require("./utils/generateMarkdown.js");
+const markdownPage = require("./utils/generateMarkdown.js");
 const util = require("util");
 // TODO: Create an array of questions for user input
 const questions = [
@@ -32,23 +32,19 @@ const questions = [
     name: "license",
     message: "Which license did you use for your project?",
     choices: [
-      "Academic Free",
+      "",
       "Apache license",
-      "Artistic license",
       "Boost Software",
       "BSD",
       "Creative Commons",
-      "Educational Community",
       "Eclipse",
       "GNU",
       "ISC",
-      "Microsoft",
       "MIT",
       "Mozilla",
       "Open",
-      "PostgreSQL",
       "The Unlicense",
-      "SIL Open Font",
+      "SIL",
     ],
   },
   {
@@ -63,8 +59,13 @@ const questions = [
   },
   {
     type: "input",
-    name: "questions",
-    message: "What should a user do if they have questions about your project?",
+    name: "github",
+    message: "What is your github user name?",
+  },
+  {
+    type: "input",
+    name: "email",
+    message: "What is your email?",
   },
 ];
 
@@ -76,16 +77,18 @@ function writeToFile(fileName, data) {
     if (err) {
       return err;
     } else {
-      console.log(
-        "Success! Please click on 'your file name'readme.md' to view"
-      );
+      console.log("Success! Please click on 'README.md' to view");
     }
   });
 }
 
 function init() {
   inquirer.prompt(questions).then(function (data) {
-    writeToFile("README.md", generateMarkdown(data));
+    writeToFile(
+      "README.md",
+
+      markdownPage.generateMarkdown(data, markdownPage.generateLicense(data))
+    );
   });
 }
 
